@@ -1,0 +1,21 @@
+<div class="welcome">
+    <p><em>Welcome! <strong>{{userName}}!</strong></em></p>
+
+    <form>
+        <div>
+            <label>What`s your name?
+                <input type="text" name="unm" [(ngModel)]="userName" />
+            </label>
+        </div>
+        <div>
+            <label>Image Width: 
+                <input type="range" name="iw" [(ngModel)]="imgWidth" min="100" max="800" />
+                <strong> {{imgWidth}} px</strong>
+            </label>
+        </div>
+    </form>
+
+    <p>
+        <img [src]="logo" (click)="toggleImage()" [style.width.px]="imgWidth" />
+    </p>
+</div>

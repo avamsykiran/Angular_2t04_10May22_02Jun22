@@ -26,7 +26,7 @@ Angular
 
     Lab Setup
     ----------------------
-        NodeJS           >=11.x   node --version
+        NodeJS           >=15.x   node --version
         Angular CLI      >=12.x   ng --version
         VSCode IDE      
         Chrome
@@ -280,3 +280,64 @@ Angular
                     class ServiceName {
                         .............
                     }
+
+    Angular CLI
+    -------------------------------------------------
+
+        Command Line Interface
+
+        ng new projName
+
+        cd projName
+
+        projName> ng g component name --skip-tests
+        projName> ng g directive name --skip-tests
+        projName> ng g module name
+        projName> ng g pipe name --skip-tests
+        projName> ng g service name --skip-tests
+        projName> ng g class name --skip-tests
+        projName> ng g interface name
+
+        projName> ng build
+        projName> ng test
+        projName> ng serve --port 9898 -o
+
+    Angular Data Binding
+    -------------------------------------------------
+
+        using the fields of the componenet class insode
+        the component template is called data binding.
+
+
+        1. Interpolation
+
+            {{angular-expression}}
+
+        2. Two - Way Data Binding
+
+            is used to collect data from a form-eleemnt or to load data into a form element.
+
+            field  -------> form-element 
+                   <-------
+
+            ngModel     FormsModule
+
+            [(ngModel)] = "field"
+
+        3. One - Way Data Binding
+
+            a) attribute binding
+                [html-attribute]="field"
+
+            b) event binding
+                is to link/invoke a method when an event happens.
+
+                (event-directive)="method()"
+
+            c) style binding
+
+                [style.cssProperty]="field"
+                
+            d) css-class binding
+        
+        
