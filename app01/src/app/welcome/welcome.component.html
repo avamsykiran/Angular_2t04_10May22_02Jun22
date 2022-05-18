@@ -13,9 +13,24 @@
                 <strong> {{imgWidth}} px</strong>
             </label>
         </div>
+        <div>
+            <label>
+                <input type="checkbox" name="cb1" [(ngModel)]="centeredFlag" />Align Center
+            </label>
+            <label>
+                <input type="checkbox" name="cb1" [(ngModel)]="roundedFlag" />Apply Round Corners
+            </label>
+            <label>
+                <input type="checkbox" name="cb1" [(ngModel)]="borderedFlag" />Apply border
+            </label>
+        </div>
     </form>
 
     <p>
-        <img [src]="logo" (click)="toggleImage()" [style.width.px]="imgWidth" />
+        <img [src]="logo" (click)="toggleImage()"
+         [style.width.px]="imgWidth"
+         [class.centered]="centeredFlag"
+         [class.rounded]="roundedFlag"
+         [class.bordered]="borderedFlag" />
     </p>
 </div>

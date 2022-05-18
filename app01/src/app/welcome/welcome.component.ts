@@ -13,6 +13,10 @@ export class WelcomeComponent {
   logoIndex:number;
   imgWidth:number;
 
+  centeredFlag:boolean;
+  borderedFlag:boolean;
+  roundedFlag:boolean;
+
   constructor() {
     this.userName = "Somebody";
     this.logos=[
@@ -24,6 +28,9 @@ export class WelcomeComponent {
     this.logoIndex=0;
     this.logo=this.logos[this.logoIndex];
     this.imgWidth=250;
+    this.centeredFlag=false;
+    this.roundedFlag=false;
+    this.borderedFlag=false;
   }
 
   toggleImage(){

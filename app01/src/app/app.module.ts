@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ArthComponent } from './arth/arth.component';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ArthComponent,
+    PipesDemoComponent
   ],
   imports: [
     BrowserModule,

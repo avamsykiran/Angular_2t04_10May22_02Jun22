@@ -339,5 +339,7 @@ Angular
                 [style.cssProperty]="field"
                 
             d) css-class binding
+
+                [class.className]="condition"
         
         

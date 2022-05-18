@@ -1,0 +1,43 @@
+<section class="pipesDemo">
+    <div>
+        <h3>String pipes</h3>
+        <span>Original: <em>{{str}}</em></span> <br />
+        <span><em>{{str|lowercase}}</em></span> <br />
+        <span><em>{{str|uppercase}}</em></span> <br />
+        <span><em>{{str|titlecase}}</em></span> <br />
+    </div>
+
+    <div>
+        <h3>Number pipe</h3>
+        <span>Original: <em>{{n}}</em></span> <br />
+        <span><em>{{n|number:'10.0-0'}}</em></span> <br />
+        <span><em>{{n|number:'3.2-4'}}</em></span> <br />
+        <span><em>{{n|number:'3.2-2'}}</em></span> <br />
+        <span><em>{{n|number:'3.2-9'}}</em></span> <br />
+    </div>
+
+    <div>
+        <h3>Currency pipe</h3>
+        <span>Original: <em>{{n}}</em></span> <br />
+        <span><em>{{n|currency:'INR'}}</em></span> <br />
+        <span><em>{{n|currency:'GBP'}}</em></span> <br />
+        <span><em>{{n|currency:'USD'}}</em></span> <br />
+        <span><em>{{n|currency:'AUD'}}</em></span> <br />
+        <span><em>{{n|currency:'JPY'}}</em></span> <br />
+        <span><em>{{n|currency:'XYZ'}}</em></span> <br />
+        
+    </div>
+
+    <div>
+        <h3>Date pipe</h3>
+        <span>Original: <em>{{d}}</em></span> <br />
+        <span><em>{{d|date:'short'}}</em></span> <br />
+        <span><em>{{d|date:'long'}}</em></span> <br />
+        <span><em>{{d|date:'dd-MM-yy'}}</em></span> <br />
+        <span><em>{{d|date:'dd-MMM-yyyy'}}</em></span> <br />
+        <span><em>{{d|date:'dd-MMMM-yyyy'}}</em></span> <br />
+        <span><em>{{d|date:'dd-MM-yy hh:mm:ss aa'}}</em></span> <br />
+        <span><em>{{d|date:'dd-MM-yy HH:mm:ss'}}</em></span> <br />
+        
+    </div>
+</section>

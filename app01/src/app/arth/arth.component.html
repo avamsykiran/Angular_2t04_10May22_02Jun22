@@ -1,0 +1,31 @@
+<section class="arth">
+    <h3>Arth</h3>
+
+    <form>
+        <div>
+            <label> Enter first number
+                <input type="number" name="firstnumber" [(ngModel)]="firstNumber">
+            </label>
+        </div>
+        <div>
+            <label> Enter second number
+                <input type="number" name="secondnumber" [(ngModel)]="secondNumber">
+            </label>
+        </div>
+    </form>
+
+    <div>
+        <div>
+            <h3>sum of {{firstNumber}} and {{secondNumber}} is: </h3> <span> {{firstNumber + secondNumber}} </span>
+        </div>
+        <div>
+            <h3>diff of {{firstNumber}} and {{secondNumber}} is: </h3> <span> {{ firstNumber - secondNumber}} </span>
+        </div>
+        <div>
+            <h3>prd of {{firstNumber}} and {{secondNumber}} is: </h3> <span> {{firstNumber * secondNumber}} </span>
+        </div>
+        <div>
+            <h3>rem of {{firstNumber}} and {{secondNumber}} is: </h3> <span> {{firstNumber % secondNumber}} </span>
+        </div>
+    </div>
+</section>

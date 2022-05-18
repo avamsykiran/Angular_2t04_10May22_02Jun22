@@ -6,3 +6,16 @@
 .welcome img{
     width:250px;
 }
+
+.rounded{
+    border-radius: 20px;
+}
+
+.centered{
+    margin:auto;
+    display: block;
+}
+
+.bordered{
+    border: 2.5px solid black;
+}

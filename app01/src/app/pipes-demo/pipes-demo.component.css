@@ -1,0 +1,11 @@
+.pipesDemo{
+    background-color: #f1f23f;
+    padding:10px;
+    columns: 3;
+}
+
+.pipesDemo div{
+    background-color: #a1a23a;
+    padding:10px;
+    margin:5px;
+}
