@@ -1,0 +1,20 @@
+<section class="col-sm-11 p-2 mx-auto">
+    <h4>Todos</h4>
+
+    <div class="alert alert-info p-2" *ngIf="!todos || todos.length===0">
+        <strong>No Todos records available to display</strong>
+    </div>
+
+    <div *ngIf="todos && todos.length>0">
+        <div class="row border-bottom border-3">
+            <div class="col-2 text-center"><strong>Id</strong></div>
+            <div class="col text-center"><strong>Task</strong></div>
+            <div class="col-3 text-center"><strong>Status</strong></div>
+        </div>
+        <div class="row border-bottom border-1" *ngFor="let t of todos">
+            <div class="col-2 text-end">{{t.id}}</div>
+            <div class="col">{{t.task}}</div>
+            <div class="col-3 text-end">{{t.status}}</div>
+        </div>
+    </div>
+</section>
