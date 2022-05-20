@@ -343,3 +343,22 @@ Angular
                 [class.className]="condition"
         
         
+    Inter Component Communication
+    ------------------------------------------------
+
+        Parent components can share data with child 
+        components through 'attributes'.
+
+        Attributes are created using '@Input()' decorator
+        in a component on the field that shall act as an 
+        attribute.
+
+        through 'event-bubbling' child component can raise an
+        evetn and the parent componetn has to ahndle the event.
+
+            in child component a field of type 'EventEmitter'
+            must be created. That field shall be marked with
+            @Output() decorator, and only then the parent component
+            can handle that event.
+
+            

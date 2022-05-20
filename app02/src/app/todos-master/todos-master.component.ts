@@ -18,4 +18,13 @@ export class TodosMasterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addTodo(todo:Todo) {
+    this.todosService.add(todo);
+    this.todos=this.todosService.getAll();
+  }
+
+  deleteTodo(id:number) {
+    this.todosService.deleteById(id);
+    this.todos=this.todosService.getAll();
+  }
 }

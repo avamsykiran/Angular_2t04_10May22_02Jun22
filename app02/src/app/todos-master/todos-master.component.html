@@ -10,11 +10,11 @@
             <div class="col-2 text-center"><strong>Id</strong></div>
             <div class="col text-center"><strong>Task</strong></div>
             <div class="col-3 text-center"><strong>Status</strong></div>
+            <div class="col-3 text-center"><strong>Action</strong></div>
         </div>
-        <div class="row border-bottom border-1" *ngFor="let t of todos">
-            <div class="col-2 text-end">{{t.id}}</div>
-            <div class="col">{{t.task}}</div>
-            <div class="col-3 text-end">{{t.status}}</div>
-        </div>
+        <app-todo-form (addTodoEvent)="addTodo($event)">
+        </app-todo-form>
+        <app-todo-details *ngFor="let t of todos" [todo]="t" (deleteTodoEvent)="deleteTodo($event)">
+        </app-todo-details>
     </div>
 </section>
