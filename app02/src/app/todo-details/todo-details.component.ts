@@ -14,8 +14,12 @@ export class TodoDetailsComponent implements OnInit {
   @Output()
   deleteTodoEvent:EventEmitter<number>;
 
+  @Output()
+  editTodoEvent:EventEmitter<number>;
+
   constructor() {
     this.deleteTodoEvent=new EventEmitter<number>();
+    this.editTodoEvent=new EventEmitter<number>();
   }
 
   ngOnInit(): void {
@@ -23,5 +27,9 @@ export class TodoDetailsComponent implements OnInit {
 
   raiseDeleteEvent(){
     this.deleteTodoEvent.emit(this.todo.id);
+  }
+
+  raiseEditEvent(){
+    this.editTodoEvent.emit(this.todo.id);
   }
 }

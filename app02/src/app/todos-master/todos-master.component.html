@@ -14,7 +14,20 @@
         </div>
         <app-todo-form (addTodoEvent)="addTodo($event)">
         </app-todo-form>
-        <app-todo-details *ngFor="let t of todos" [todo]="t" (deleteTodoEvent)="deleteTodo($event)">
-        </app-todo-details>
+        <div *ngFor="let t of todos">
+            <app-todo-details 
+                *ngIf="!t.isEditable" 
+                [todo]="t" 
+                (deleteTodoEvent)="deleteTodo($event)"
+                (editTodoEvent)="markEditable($event)">
+            </app-todo-details>
+            <app-todo-form 
+                *ngIf="t.isEditable" 
+                [isEditing]="true"
+                [todo]="t" 
+                (cancelEditTodoEvent)="unMarkEditable($event)"
+                (updateTodoEvent)="save($event)">
+            </app-todo-form>
+        </div>
     </div>
 </section>

@@ -27,4 +27,17 @@ export class TodosMasterComponent implements OnInit {
     this.todosService.deleteById(id);
     this.todos=this.todosService.getAll();
   }
+
+  markEditable(id:number){
+    this.todos= this.todos.map(t => t.id!==id?t:{...t,isEditable:true});
+  }
+
+  unMarkEditable(id:number){
+    this.todos= this.todos.map(t => t.id!==id?t:{...t,isEditable:undefined});
+  }
+
+  save(todo:Todo){
+    this.todosService.update({...todo,isEditable:undefined});
+    this.todos=this.todosService.getAll();
+  }
 }

@@ -1,9 +1,10 @@
-<form class="row border-bottom border-1" (ngSubmit)="formSubmitted()">
+<form class="row border-bottom border-1" (ngSubmit)="formSubmitted()" #f="ngForm">
     <div class="col-2">
-        <input type="number" [(ngModel)]="todo.id" name="id" class="form-control" />
+        <input type="number" [(ngModel)]="todo.id" name="id" class="form-control" 
+        [readonly]="isEditing" required #tid="ngModel" />
     </div>
     <div class="col">
-        <input type="text" [(ngModel)]="todo.task" name="task" class="form-control" />
+        <input type="text" [(ngModel)]="todo.task" name="task" class="form-control" required minlength="5" #task="ngModel"/>
     </div>
     <div class="col-3">
         <select [(ngModel)]="todo.status" class="form-control" name="status">
@@ -11,7 +12,11 @@
             <option value="DONE">DONE</option>
         </select>
     </div>
-    <div class="col-3">
-        <button class="btn btn-sm btn-primary">ADD</button>
+    <div class="col-3" *ngIf="!isEditing">
+        <button class="btn btn-sm btn-primary" [disabled]="f.invalid">ADD</button>
+    </div>
+    <div class="col-3" *ngIf="isEditing">
+        <button class="btn btn-sm btn-primary" [disabled]="f.invalid">SAVE</button>
+        <button class="btn btn-sm btn-danger" type="button" (click)="raiseCancelEdit()" >CANCEL</button>
     </div>
 </form>

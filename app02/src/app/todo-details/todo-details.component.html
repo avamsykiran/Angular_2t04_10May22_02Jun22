@@ -3,7 +3,7 @@
     <div class="col">{{todo.task}}</div>
     <div class="col-3 text-end">{{todo.status}}</div>
     <div class="col-3">
-        <button class="btn btn-sm btn-secondary">EDIT</button>
+        <button class="btn btn-sm btn-secondary" (click)="raiseEditEvent()">EDIT</button>
         <button class="btn btn-sm btn-danger" (click)="raiseDeleteEvent()">DELETE</button>
     </div>
 </div>

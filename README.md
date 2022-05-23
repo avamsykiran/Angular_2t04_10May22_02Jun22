@@ -361,4 +361,16 @@ Angular
             @Output() decorator, and only then the parent component
             can handle that event.
 
-            
+    Angular Forms
+    ------------------------------------------------
+
+        Template Driven Forms
+
+            1. are generated in tempalte
+            2. are mapped to the field using ngModel directive from FormsModule
+            3. we need to map ngModel objects to template references in order to
+                verify the validity of those form elements.
+            4. are hard to test and are used in limited senarios especially when the form has
+             not more then 2 or 3 controls.
+
+        Model Driven Forms / Reactive forms       
