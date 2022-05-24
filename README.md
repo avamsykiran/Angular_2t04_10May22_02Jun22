@@ -366,7 +366,7 @@ Angular
 
         Template Driven Forms
 
-            1. are generated in tempalte
+            1. are generated in template
             2. are mapped to the field using ngModel directive from FormsModule
             3. we need to map ngModel objects to template references in order to
                 verify the validity of those form elements.
@@ -374,3 +374,43 @@ Angular
              not more then 2 or 3 controls.
 
         Model Driven Forms / Reactive forms       
+
+            1. are generated in the component class.
+            2. we use ReactiveFormsModule
+            3. These form provided inbuilt validators and are mapped to the 
+                template using  formControl directive from ReactiveFormsModule.
+
+    RxJS
+    -------------------------------------------------
+
+        Reactive-Javascript is a library offering observability pattern.
+
+        Observble class is an enchanced Promise class.
+
+        A promise can supply a value only after the completion of the asynchronosu job,
+        An observable can emit values continuosly while the job is in progress.
+
+        A promise can be subscribed by only one subscriber,
+        An observable cab be subsribed by more than one subscriber.
+
+        let p = new Promise( (resolve,reject) => {
+            //resolve is sued to signal the complete
+            //reject is used to signal the error
+        });
+    
+        p.then(
+            value => {},
+            err => {}
+        );
+
+        let ob = new Observable( observer => {
+            //observer.next         to emit values
+            //observer.error        to signal error
+            //observer.complete     to signal completion
+        });
+
+        ob.subscribe(
+            val => {},      //respond to next
+            err => {},      //respond to error
+            () => {}        //respond to complete
+        );

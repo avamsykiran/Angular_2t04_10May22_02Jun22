@@ -1,0 +1,33 @@
+<section class="col-sm-11 p-2 mx-auto">
+    <h4>Todos</h4>
+
+    <div class="alert alert-info p-2" *ngIf="!todos || todos.length===0">
+        <strong>No Todos records available to display</strong>
+    </div>
+
+    <div *ngIf="todos && todos.length>0">
+        <div class="row border-bottom border-3">
+            <div class="col-2 text-center"><strong>Id</strong></div>
+            <div class="col text-center"><strong>Task</strong></div>
+            <div class="col-3 text-center"><strong>Status</strong></div>
+            <div class="col-3 text-center"><strong>Action</strong></div>
+        </div>
+        <app-todo-form (addTodoEvent)="addTodo($event)">
+        </app-todo-form>
+        <div *ngFor="let t of todos">
+            <app-todo-details 
+                *ngIf="!t.isEditable" 
+                [todo]="t" 
+                (deleteTodoEvent)="deleteTodo($event)"
+                (editTodoEvent)="markEditable($event)">
+            </app-todo-details>
+            <app-todo-form 
+                *ngIf="t.isEditable" 
+                [isEditing]="true"
+                [todo]="t" 
+                (cancelEditTodoEvent)="unMarkEditable($event)"
+                (updateTodoEvent)="save($event)">
+            </app-todo-form>
+        </div>
+    </div>
+</section>

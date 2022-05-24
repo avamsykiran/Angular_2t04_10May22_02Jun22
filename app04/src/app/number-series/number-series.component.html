@@ -1,0 +1,21 @@
+<section class="container-fluid p-4 m-4">
+    <form (ngSubmit)="formSubmitted()">
+        <label class="m-2">Lower Bound: 
+            <input type="number" name="lb" [(ngModel)]="lb" />
+        </label>
+        <label class="m-2">Upper Bound: 
+            <input type="number" name="ub" [(ngModel)]="ub" />
+        </label>
+        <button class="btn btn-sm btn-primary m-2" [disabled]="isJobInProgress">
+            GENERATE
+        </button>
+    </form>
+
+    <div class="border border-primary p-2 m-2" *ngIf="results && results.length>0">
+        <span *ngFor="let n of results">{{n}}, </span>
+    </div>
+    
+    <div class="border border-danger p-2 m-2" *ngIf="errMsg">
+        <strong>{{errMsg}}</strong>
+    </div>
+</section>
