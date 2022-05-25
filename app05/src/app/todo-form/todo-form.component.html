@@ -1,0 +1,21 @@
+<form class="row border-bottom border-1" (ngSubmit)="formSubmitted()" [formGroup]="todoForm">
+    <div class="col-2">
+        <input type="number" class="form-control" [readonly]="isEditing" formControlName="id" />
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" formControlName="task"/>
+    </div>
+    <div class="col-3">
+        <select class="form-control" formControlName="status">
+            <option value="PENDING">PENDING</option>
+            <option value="DONE">DONE</option>
+        </select>
+    </div>
+    <div class="col-3" *ngIf="!isEditing">
+        <button class="btn btn-sm btn-primary" [disabled]="todoForm.invalid">ADD</button>
+    </div>
+    <div class="col-3" *ngIf="isEditing">
+        <button class="btn btn-sm btn-primary" [disabled]="todoForm.invalid">SAVE</button>
+        <button class="btn btn-sm btn-danger" type="button" (click)="raiseCancelEdit()" >CANCEL</button>
+    </div>
+</form>

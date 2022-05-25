@@ -1,0 +1,9 @@
+<div class="row border-bottom border-1">
+    <div class="col-2 text-end">{{todo.id}}</div>
+    <div class="col">{{todo.task}}</div>
+    <div class="col-3 text-end">{{todo.status}}</div>
+    <div class="col-3">
+        <button class="btn btn-sm btn-secondary" (click)="raiseEditEvent()">EDIT</button>
+        <button class="btn btn-sm btn-danger" (click)="raiseDeleteEvent()">DELETE</button>
+    </div>
+</div>
