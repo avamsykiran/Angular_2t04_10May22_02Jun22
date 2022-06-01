@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Todo } from '../models/todo';
 
@@ -7,7 +7,7 @@ import { Todo } from '../models/todo';
   templateUrl: './todo-form.component.html',
   styleUrls: ['./todo-form.component.css']
 })
-export class TodoFormComponent implements OnInit {
+export class TodoFormComponent implements OnInit,OnChanges {
 
   @Input()
   todo!:Todo;
@@ -43,10 +43,14 @@ export class TodoFormComponent implements OnInit {
     this.todoForm=new FormGroup({id:this.idFC,task:this.taskFC,status:this.statusFC});
   }
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
     if(this.isEditing){
       this.todoForm.setValue(this.todo);
     }
+  }
+
+  ngOnInit(): void {
+    
   }
 
   formSubmitted(){

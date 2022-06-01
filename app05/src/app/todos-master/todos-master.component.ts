@@ -9,23 +9,36 @@ import { TodosService } from '../services/todos.service';
 })
 export class TodosMasterComponent implements OnInit {
 
-  todos:Todo[];
+  todos!:Todo[];
+  errMsg!:string;
 
   constructor(private todosService:TodosService) {
-    this.todos=this.todosService.getAll();
+    
+  }
+
+  loadData(){
+    this.todosService.getAll().subscribe({
+      next: data => this.todos=data,
+      error: err => {console.error(err);this.errMsg="Unable to laod data! Please again later!";}
+    });
   }
  
   ngOnInit(): void {
+    this.loadData();
   }
 
   addTodo(todo:Todo) {
-    this.todosService.add(todo);
-    this.todos=this.todosService.getAll();
+    this.todosService.add(todo).subscribe({
+      next: data => this.loadData(),
+      error: err => {console.error(err);this.errMsg="Unable to save data! Please again later!";}
+    })
   }
 
   deleteTodo(id:number) {
-    this.todosService.deleteById(id);
-    this.todos=this.todosService.getAll();
+    this.todosService.deleteById(id).subscribe({
+      next: data => this.loadData(),
+      error: err => {console.error(err);this.errMsg="Unable to delete data! Please again later!";}
+    })
   }
 
   markEditable(id:number){
@@ -37,7 +50,9 @@ export class TodosMasterComponent implements OnInit {
   }
 
   save(todo:Todo){
-    this.todosService.update({...todo,isEditable:undefined});
-    this.todos=this.todosService.getAll();
+    this.todosService.update({...todo,isEditable:undefined}).subscribe({
+      next: data => this.loadData(),
+      error: err => {console.error(err);this.errMsg="Unable to save data! Please again later!";}
+    })
   }
 }

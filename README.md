@@ -414,3 +414,29 @@ Angular
             err => {},      //respond to error
             () => {}        //respond to complete
         );
+
+    HttpClientModule
+    --------------------------------------------------
+
+        HttpClient
+            get(url:string) : Observable
+            put(url:string,reqBody:Object) : Observable
+            post(url:string,reqBody:Object) : Observable
+            delete(url:string) : Observable
+
+    BudgetTracker - Assignment
+    --------------------------------------------------------
+
+        1. Add a transactionm       txnid,tnxDate,txnAmount,txnType
+        2. modify a transaction
+        3. delete a transaction
+        4. display the statement
+            TxnId   DateOfTransaction   Description     Credit      Debit
+             1      01-Aug-2021         Salary          500000
+             2      02-Aug-2021         Rent                         5000
+            
+            Totals                                      500000       5000
+            Balance                                                450000
+
+    
+    

@@ -1,8 +1,16 @@
 <section class="col-sm-11 p-2 mx-auto">
     <h4>Todos</h4>
 
-    <div class="alert alert-info p-2" *ngIf="!todos || todos.length===0">
+    <div class="alert alert-info p-2" *ngIf="!todos && !errMsg">
+        <strong>Loading data....</strong>
+    </div>
+
+    <div class="alert alert-info p-2" *ngIf="todos && todos.length===0">
         <strong>No Todos records available to display</strong>
+    </div>
+
+    <div class="alert alert-danger p-2" *ngIf="errMsg">
+        <strong>{{errMsg}}</strong>
     </div>
 
     <div *ngIf="todos && todos.length>0">
