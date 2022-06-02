@@ -438,5 +438,24 @@ Angular
             Totals                                      500000       5000
             Balance                                                450000
 
-    
-    
+    Routing
+    -------------------------------------------
+
+        RouterModule
+
+            Route       path:
+                        component:
+                        children: []
+                        pathMatch: 'statrsWith|full'
+
+            Routes      an array of Route
+
+            RouterModule.forRoot(an array of Route)
+
+            routerLink  as altenrnate to href attribue of 'a' tag
+
+            routerLinkActive    takes the css class to be applied on an active link.
+
+            Router      a service used to navigate programatically.
+
+            router-outlet   is a component used to reserve place for incoming components.
