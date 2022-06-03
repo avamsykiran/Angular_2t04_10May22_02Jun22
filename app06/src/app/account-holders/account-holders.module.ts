@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http'
+import { RouterModule } from '@angular/router';
 
 import { AccountHoldersComponent } from './account-holders/account-holders.component';
 import { AccountHolderFormComponent } from './account-holder-form/account-holder-form.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { AccountHolderFormComponent } from './account-holder-form/account-holder
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   exports:[
     AccountHoldersComponent,

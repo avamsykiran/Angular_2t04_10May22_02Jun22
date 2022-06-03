@@ -4,11 +4,13 @@ import { AccountHolderFormComponent } from './account-holders/account-holder-for
 import { AccountHoldersModule } from './account-holders/account-holders.module';
 import { AccountHoldersComponent } from './account-holders/account-holders/account-holders.component';
 import { TxnsModule } from './txns/txns.module';
+import { TxnsComponent } from './txns/txns/txns.component';
 
 const routes: Routes = [
   {path:'',pathMatch:'full',redirectTo:'/accounts'},
   {path:'accounts',component:AccountHoldersComponent},
-  {path:'addAccount',component:AccountHolderFormComponent}
+  {path:'addAccount',component:AccountHolderFormComponent},
+  {path:'txns/:ahid',component:TxnsComponent}
 ];
 
 @NgModule({
